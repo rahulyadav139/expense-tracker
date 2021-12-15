@@ -20,7 +20,7 @@ const ExpenseForm = props => {
   };
   const amountChangeHandler = e => {
     if (+e.target.value < 0) {
-      setError('Negative amount value is not allowed!');
+      setError('Negative amount is not allowed!');
       return;
     }
 
