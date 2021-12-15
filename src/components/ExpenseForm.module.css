@@ -1,0 +1,25 @@
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2;
+}
+input {
+  width: 50%;
+  height: 2rem;
+  border: none;
+  margin: 0.5rem 0;
+  padding: 1rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+@media only screen and (max-width: 40rem) {
+  input {
+    width: 100%;
+  }
+  .buttons {
+    justify-content: space-between;
+  }
+}

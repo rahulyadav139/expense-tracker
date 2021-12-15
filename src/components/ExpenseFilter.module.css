@@ -1,0 +1,27 @@
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+
+  background-color: #04b4ae;
+  border-radius: 1rem;
+  padding: 1rem;
+  color: white;
+}
+select {
+  padding: 0.8rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  background-color: #0b615e;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+option {
+  font-size: large;
+  text-align: left;
+  background-color: white;
+  color: black;
+}

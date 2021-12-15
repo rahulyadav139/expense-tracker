@@ -1,0 +1,9 @@
+.form {
+  margin: auto;
+  padding: 1rem;
+  background-color: #04b4ae;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}

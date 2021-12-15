@@ -1,0 +1,22 @@
+.btn {
+  font-family: inherit;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-color: #0b615e;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+.add {
+  margin: auto;
+}
+
+@media only screen and (max-width: 40rem) {
+  .btn {
+    margin: 1rem 2rem;
+  }
+}
