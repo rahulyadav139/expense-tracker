@@ -5,6 +5,7 @@ import Button from './UI/Button';
 import Modal from './UI/Modal';
 
 import { Fragment } from 'react';
+import { useRef } from 'react';
 
 const ExpenseForm = props => {
   const [title, setTitle] = useState('');
@@ -12,10 +13,17 @@ const ExpenseForm = props => {
   const [date, setDate] = useState('');
   const [error, setError] = useState('');
 
+  const amountRef = useRef();
+
   const titleChangeHandler = e => {
     setTitle(e.target.value);
   };
   const amountChangeHandler = e => {
+    if (+e.target.value < 0) {
+      setError('Negative amount value is not allowed!');
+      return;
+    }
+
     setAmount(e.target.value);
   };
 
@@ -27,11 +35,9 @@ const ExpenseForm = props => {
     e.preventDefault();
     if (!title || !amount || !date)
       return setError('Empty fields are not allowed!');
-    if (+amount < 0) return setError('Amount must be a positive number!');
 
     const newExpense = {
       id: `e-${Math.floor(Math.random() * 9) + 1}`,
-
       title: title,
       amount: Number(amount).toFixed(2),
       date: new Date(date),
@@ -44,6 +50,8 @@ const ExpenseForm = props => {
     props.onCancel();
   };
   const hideModal = () => {
+    if (error === 'Negative amount value is not allowed!')
+      amountRef.current.focus();
     setError('');
   };
 
@@ -54,6 +62,7 @@ const ExpenseForm = props => {
         <input value={title} onChange={titleChangeHandler} type="text" />
         <label>Amount</label>
         <input
+          ref={amountRef}
           value={amount}
           onChange={amountChangeHandler}
           type="number"
